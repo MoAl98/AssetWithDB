@@ -38,7 +38,7 @@ namespace AssetWithDB
         {
 
          return this.Id.ToString().PadRight(10) + this.TypeOfDevice.PadRight(10) + this.Brand.PadRight(10) + this.Model.PadRight(20) + this.Office.PadRight(10)
-         + this.PurchaseDate.ToString("yyyy-MM-dd").PadRight(20) + this.Price.ToString().PadRight(15) + this.Currency.PadRight(10) + this.Price.ToString().PadRight(10);
+         + this.PurchaseDate.ToString("yyyy-MM-dd").PadRight(20) + this.Price.ToString().PadRight(15) + this.Currency.PadRight(10) + this.LocalPrice.ToString().PadRight(10);
 
         }
 

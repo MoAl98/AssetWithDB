@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Xml.Serialization;
 using System.Runtime.InteropServices;
 
-Console.WriteLine("Welcome to the Asset App", Console.ForegroundColor = ConsoleColor.Yellow);
+Console.WriteLine("Welcome to the Asset App.\n", Console.ForegroundColor = ConsoleColor.DarkBlue);
+Console.WriteLine("----------------------------------------------------------------------------");
 Console.ResetColor();
 
 
@@ -14,12 +15,17 @@ MyDbContext Context = new MyDbContext();
 while (true)
 {
     Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine("Choose a number: ");
+    Console.WriteLine("Choose a number:\n ");
     Console.WriteLine("1. List all Details.\t\t2. Add a new Item\n");
     Console.WriteLine("3. Edit an Item.\t\t4. Delete an Item\n");
-    Console.WriteLine("5. Exit application");
-    Console.Write("Make your choice: ");
     Console.ResetColor();
+    Console.WriteLine("5. Exit application\n", Console.ForegroundColor = ConsoleColor.Yellow);
+    Console.ResetColor();
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
+    Console.WriteLine("----------------------------------------------------------------------------");
+    Console.Write("Make your choice:");
+    Console.ResetColor();
+
     string UserChoice = Console.ReadLine();
 
     if (UserChoice == "1")
@@ -97,22 +103,23 @@ while (true)
         Context.Devices.Remove(ItemToDelete);
         Context.SaveChanges();
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("The new information was saved.\n");
+        Console.WriteLine("Item with ID number : " + RemoveItem + " is successfully deleted.\n");
         Console.ResetColor();
     }
 
     else if (UserChoice == "5")
     {
        
-        Console.WriteLine("Good bye!");
+        Console.WriteLine("Good bye!", Console.ForegroundColor = ConsoleColor.Green);
+        Console.ResetColor();
         break;
     }
 
     else
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Please enter a number between 1 and 5. Try again!");
-        Console.ForegroundColor = ConsoleColor.Yellow;
+       
+        Console.WriteLine("Please enter a number between 1 and 5. Try again!", Console.ForegroundColor = ConsoleColor.Red);
+        Console.ResetColor();
     }
 
 }
